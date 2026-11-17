@@ -7,7 +7,7 @@ A documentação vem **antes do código**. Cada etapa usa a anterior como base.
 | Documento | Status | Conteúdo |
 |-----------|--------|----------|
 | [01 · Visão do produto](01-visao-produto.md) | 🟡 Rascunho v2 | Problema, pesquisa de mercado, diferencial, público, ciclo do produto, escopo do MVP, modelo de negócio, riscos e stack. |
-| [Personas](ux/personas.pptx) e [User Stories](ux/user-stories.pptx) (slides) | 🟡 Rascunho | **Fonte da verdade** do conteúdo: 6 personas e 12 histórias, nos templates Google UX. |
+| [Personas](ux/personas.pptx), [User Stories](ux/user-stories.pptx), [Journey Maps](ux/journey-maps.pptx) e [User Flow](ux/user-flow.pptx) (slides) | 🟡 Rascunho | **Fonte da verdade** de UX: 6 personas, 12 histórias, 6 jornadas atuais (sem o app) e 2 fluxos do MVP, nos templates Google UX. |
 | [04 · Requisitos](04-requisitos.md) | 🟡 Rascunho v2 | **Fonte da verdade** dos requisitos: 54 funcionais e 17 não funcionais, com prioridade P0/P1. O [kanban](https://github.com/users/nicolasksoares/projects/9) acompanha só o andamento. |
 | [Segurança do usuário](seguranca.md) | 🟡 Rascunho | 5 camadas de proteção, protocolo de incidente, LGPD. Origem dos requisitos RF-40 a RF-64. |
 | [Perguntas para o cliente](perguntas-cliente.md) | ⏳ Temporário | Decisões em aberto para a próxima reunião. Depois dela, vira `decisoes.md`. |
@@ -19,7 +19,7 @@ A numeração segue a ordem de produção. Os números que faltam são as próxi
 | # | Etapa | Status |
 |---|-------|--------|
 | 01 | Visão do produto | 🟡 |
-| 02 | Personas · User Stories · Journey Maps · User Flow (templates Google UX) | 🟡 Personas e User Stories prontas |
+| 02 | Personas · User Stories · Journey Maps · User Flow (templates Google UX) | 🟡 Pronto, aguardando validação |
 | 03 | Competitive Audit (templates Google UX) | ⚪ |
 | 04 | Requisitos funcionais e não funcionais | 🟡 |
 | 05 | Diagrama de casos de uso | ⚪ |
