@@ -46,11 +46,11 @@
 
 ## 8. Lacunas levantadas pelas personas e user stories
 
-Detalhes em [02-personas.md](02-personas.md) e [02-user-stories.md](02-user-stories.md).
+As histórias estão em [ux/user-stories.pptx](ux/user-stories.pptx) e as personas em [ux/personas.pptx](ux/personas.pptx).
 
-22. **Ir com um amigo ([US-12](02-user-stories.md#us-12)):** quem tem medo de desconhecidos pede para se inscrever em dupla. Entra no MVP? Isso reduz a mistura dos grupos.
-23. **Transparência sobre dados ([US-11](02-user-stories.md#us-11)):** topa que o app guarde só o resultado da verificação, e não o documento, e que explique isso antes do envio?
-24. **Faixa de idade no grupo ([US-09](02-user-stories.md#us-09)):** o usuário pode escolher a faixa de idade das pessoas do grupo?
-25. **Quebra-gelo por IA ([US-10](02-user-stories.md#us-10)):** sobe para o lançamento ou fica para logo depois?
-26. **Aviso de rolês novos ([US-08](02-user-stories.md#us-08)):** o app avisa quando os rolês da semana são publicados?
-27. **Grupo só de mulheres que não fecha ([US-05](02-user-stories.md#us-05)):** se não houver mulheres suficientes, a inscrição é cancelada com reembolso?
+22. **Ir com um amigo (US-12):** quem tem medo de desconhecidos pede para se inscrever em dupla. Entra no MVP? Isso reduz a mistura dos grupos.
+23. **Transparência sobre dados (US-11):** topa que o app guarde só o resultado da verificação, e não o documento, e que explique isso antes do envio?
+24. **Faixa de idade no grupo (US-09):** o usuário pode escolher a faixa de idade das pessoas do grupo?
+25. **Quebra-gelo por IA (US-10):** sobe para o lançamento ou fica para logo depois?
+26. **Aviso de rolês novos (US-08):** o app avisa quando os rolês da semana são publicados?
+27. **Grupo só de mulheres que não fecha (US-05):** se não houver mulheres suficientes, a inscrição é cancelada com reembolso?

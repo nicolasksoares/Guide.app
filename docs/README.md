@@ -7,11 +7,10 @@ A documentação vem **antes do código**. Cada etapa usa a anterior como base.
 | Documento | Status | Conteúdo |
 |-----------|--------|----------|
 | [01 · Visão do produto](01-visao-produto.md) | 🟡 Rascunho v2 | Problema, pesquisa de mercado, diferencial, público, ciclo do produto, escopo do MVP, modelo de negócio, riscos e stack. |
-| [02 · Personas](02-personas.md) | 🟡 Rascunho | 6 personas (Lucas, Marina, Júlia, Rafael, Thiago e o cético Bruno), o que cada uma pede ao produto, lacunas e quem não é público. Slides em [`ux/personas.pptx`](ux/personas.pptx). |
-| [02 · User Stories](02-user-stories.md) | 🟡 Rascunho | 12 histórias (2 por persona) com critérios de aceite, vínculo com os requisitos e 6 lacunas. Slides em [`ux/user-stories.pptx`](ux/user-stories.pptx). |
-| [04 · Requisitos](04-requisitos.md) | 🟡 Rascunho v2 | 54 requisitos funcionais e 17 não funcionais, com prioridade P0/P1. Espelhados no [kanban](https://github.com/users/nicolasksoares/projects/9). |
+| [Personas](ux/personas.pptx) e [User Stories](ux/user-stories.pptx) (slides) | 🟡 Rascunho | **Fonte da verdade** do conteúdo: 6 personas e 12 histórias, nos templates Google UX. |
+| [04 · Requisitos](04-requisitos.md) | 🟡 Rascunho v2 | **Fonte da verdade** dos requisitos: 54 funcionais e 17 não funcionais, com prioridade P0/P1. O [kanban](https://github.com/users/nicolasksoares/projects/9) acompanha só o andamento. |
 | [Segurança do usuário](seguranca.md) | 🟡 Rascunho | 5 camadas de proteção, protocolo de incidente, LGPD. Origem dos requisitos RF-40 a RF-64. |
-| [Perguntas para o cliente](perguntas-cliente.md) | 🟡 Rascunho | Decisões em aberto, para a próxima reunião. |
+| [Perguntas para o cliente](perguntas-cliente.md) | ⏳ Temporário | Decisões em aberto para a próxima reunião. Depois dela, vira `decisoes.md`. |
 
 ## Roteiro
 
@@ -31,6 +30,7 @@ A numeração segue a ordem de produção. Os números que faltam são as próxi
 
 ## Convenções
 
+- **Uma fonte da verdade por assunto.** UX/UI nos arquivos de design (`ux/*.pptx`, depois Figma), requisitos no `04-requisitos.md`, andamento no kanban. Markdown só para produto e engenharia.
 - Diagramas em **Mermaid** dentro do Markdown sempre que possível. BPMN em `.bpmn` (bpmn.io / Camunda Modeler).
 - IDs rastreáveis: `US-xx` (história) → `RF-xx` / `RNF-xx` (requisito) → `UC-xx` (caso de uso). Medidas de segurança: `SEG-xx`.
 - Status: ⚪ a fazer · 🟡 rascunho · 🟢 validado com o cliente.

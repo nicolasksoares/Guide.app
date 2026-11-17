@@ -2,7 +2,7 @@
 
 > Status: 🟡 Rascunho v2 — alinhado à [Visão do produto v2](01-visao-produto.md) (rolês em grupo + identidade de rolê) e ao [documento de segurança](seguranca.md).
 > Prioridade: **P0** = obrigatório no lançamento do MVP · **P1** = logo após o lançamento.
-> A coluna *Origem* aponta para a visão do produto (V2), o documento de segurança (SEG) e as [user stories](02-user-stories.md) (US) que cada requisito atende.
+> A coluna *Origem* aponta para a visão do produto (V2), o documento de segurança (SEG) e as [user stories](ux/user-stories.pptx) (US) que cada requisito atende.
 > Cada requisito é um card no [kanban do MVP](https://github.com/users/nicolasksoares/projects/9).
 
 ## Requisitos Funcionais (RF)

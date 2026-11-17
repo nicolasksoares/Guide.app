@@ -134,7 +134,7 @@ Se o usuário puder escolher qualquer evento, a cidade se espalha e nenhum grupo
 | Risco | Mitigação |
 |-------|-----------|
 | **Segurança** (um incidente grave pode matar o app) | Verificação de identidade, 18+, só locais públicos, grupos só de mulheres, denúncia e banimento, termos claros. Detalhes em [Segurança do usuário](seguranca.md). |
-| **A verificação afastar quem tem medo** (ver persona [Bruno](02-personas.md)) | Explicar em linguagem simples o que é coletado, por quem e por quanto tempo; guardar só o resultado da verificação, não o documento **(validar com fornecedor e advogado)** |
+| **A verificação afastar quem tem medo** (ver persona [Bruno](ux/personas.pptx)) | Explicar em linguagem simples o que é coletado, por quem e por quanto tempo; guardar só o resultado da verificação, não o documento **(validar com fornecedor e advogado)** |
 | **Verificação não impede má intenção** | Verificar prova *quem* a pessoa é, não *o que ela pretende*. Regras de grupo, reputação e resposta rápida a denúncias reduzem o risco, mas não o eliminam |
 | **Grupos não fecham** | Cidade única, poucos rolês em dias fixos, meta mínima de inscritos antes de confirmar |
 | **No-show** | Pagamento antecipado + taxa de no-show + reputação |

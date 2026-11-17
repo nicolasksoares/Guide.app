@@ -73,14 +73,14 @@ O algoritmo de grupos é a ferramenta de segurança mais forte que temos.
 
 ## Limites e pontos de atenção
 
-A persona [Bruno](02-personas.md) (vítima de golpe após um encontro marcado por app) mostra o que estas camadas **não** resolvem:
+A persona [Bruno](ux/personas.pptx) (vítima de golpe após um encontro marcado por app) mostra o que estas camadas **não** resolvem:
 
 - **Verificar não é o mesmo que confiar.** A verificação prova *quem* a pessoa é, não *o que ela pretende*. Reputação e denúncia só agem depois do primeiro incidente.
 - **A própria verificação pode afastar quem tem medo.** Pedir documento e selfie assusta quem já teve dados vazados. Candidatas a medida **(validar com fornecedor e advogado)**:
-  - explicar, antes do envio, o que é coletado, quem processa, onde fica e por quanto tempo ([US-11](02-user-stories.md#us-11));
+  - explicar, antes do envio, o que é coletado, quem processa, onde fica e por quanto tempo (US-11);
   - guardar no app só o resultado da verificação, e não o documento nem a selfie.
 - **O que acontece dentro do local foge do app.** Golpe com bebida ("boa noite, Cinderela") e furto acontecem no ambiente físico. Parcerias com as casas e orientação (SEG-30, SEG-34) reduzem o risco, mas não o eliminam.
-- **Ir com alguém de confiança** é um pedido forte de quem tem medo ([US-12](02-user-stories.md#us-12)), mas ainda não existe e mexe nas regras de grupo da Camada 2.
+- **Ir com alguém de confiança** é um pedido forte de quem tem medo (US-12), mas ainda não existe e mexe nas regras de grupo da Camada 2.
 
 ## Protocolo de incidente (rascunho)
 
