@@ -2,7 +2,7 @@
 
 > Status: 🟡 Rascunho v2 — alinhado à [Visão do produto v2](01-visao-produto.md) (rolês em grupo + identidade de rolê) e ao [documento de segurança](seguranca.md).
 > Prioridade: **P0** = obrigatório no lançamento do MVP · **P1** = logo após o lançamento.
-> A coluna *Origem* aponta para a visão do produto (V2) ou para o documento de segurança (SEG). Quando as histórias de usuário forem escritas, elas passam a ser a origem.
+> A coluna *Origem* aponta para a visão do produto (V2), o documento de segurança (SEG) e as [user stories](02-user-stories.md) (US) que cada requisito atende.
 > Cada requisito é um card no [kanban do MVP](https://github.com/users/nicolasksoares/projects/9).
 
 ## Requisitos Funcionais (RF)
@@ -13,8 +13,8 @@
 |----|-----------|--------|--------|
 | RF-01 | O sistema deve permitir cadastro com nome, e-mail, senha, data de nascimento, CPF e telefone. | P0 | V2 |
 | RF-02 | O sistema deve autenticar usuários e manter sessão via token (JWT), com papéis de usuário e admin. | P0 | V2 |
-| RF-03 | O onboarding deve exigir a escolha de no mínimo 3 categorias de interesse. | P0 | V2 |
-| RF-04 | O onboarding deve registrar a vibe do usuário: energia (tranquilo ↔ agitado), faixa de preço, introvertido ↔ extrovertido e dias/horários preferidos. | P0 | V2 |
+| RF-03 | O onboarding deve exigir a escolha de no mínimo 3 categorias de interesse. | P0 | V2, US-02 |
+| RF-04 | O onboarding deve registrar a vibe do usuário: energia (tranquilo ↔ agitado), faixa de preço, introvertido ↔ extrovertido e dias/horários preferidos. | P0 | V2, US-02, US-09 |
 | RF-05 | O usuário deve poder editar interesses, vibe e foto a qualquer momento. | P0 | V2 |
 | RF-06 | O usuário deve poder exportar seus dados e excluir a conta. | P0 | V2 (LGPD) |
 
@@ -23,19 +23,19 @@
 | ID | Requisito | Prior. | Origem |
 |----|-----------|--------|--------|
 | RF-10 | O admin deve poder cadastrar locais com nome, endereço e coordenadas geográficas. | P0 | V2 |
-| RF-11 | O admin deve poder cadastrar rolês com: evento, local, data/hora, preço, capacidade, mínimo de inscritos, categorias e tags de vibe. | P0 | V2 |
-| RF-12 | O sistema deve listar os rolês da semana ordenados por compatibilidade com o perfil do usuário. | P0 | V2 |
-| RF-13 | O usuário deve ver o detalhe do rolê: descrição, data/hora, bairro, preço, vagas restantes e o que está incluso. | P0 | V2 |
-| RF-14 | O usuário deve poder se inscrever em um rolê e pagar pelo app, via gateway de pagamento. | P0 | V2 |
+| RF-11 | O admin deve poder cadastrar rolês com: evento, local, data/hora, preço, capacidade, mínimo de inscritos, categorias e tags de vibe. | P0 | V2, US-03 |
+| RF-12 | O sistema deve listar os rolês da semana ordenados por compatibilidade com o perfil do usuário. | P0 | V2, US-02, US-03 |
+| RF-13 | O usuário deve ver o detalhe do rolê: descrição, data/hora, bairro, preço, vagas restantes e o que está incluso. | P0 | V2, US-03, US-07 |
+| RF-14 | O usuário deve poder se inscrever em um rolê e pagar pelo app, via gateway de pagamento. | P0 | V2, US-01 |
 | RF-15 | O usuário deve poder cancelar a inscrição com reembolso até um prazo definido antes do rolê. | P0 | V2 |
-| RF-16 | Se um rolê não atingir o mínimo de inscritos no prazo, o sistema deve cancelá-lo e reembolsar os inscritos automaticamente. | P0 | V2 |
+| RF-16 | Se um rolê não atingir o mínimo de inscritos no prazo, o sistema deve cancelá-lo e reembolsar os inscritos automaticamente. | P0 | V2, US-05 |
 | RF-17 | O usuário deve poder pedir "me surpreenda" e ser inscrito no rolê da semana mais compatível com o perfil. | P1 | V2 |
 
 ### Grupos
 
 | ID | Requisito | Prior. | Origem |
 |----|-----------|--------|--------|
-| RF-20 | O sistema deve montar automaticamente grupos de 4–6 pessoas por rolê, maximizando a compatibilidade de interesses e vibe e respeitando as regras de segurança (RF-45 a RF-48). | P0 | V2 |
+| RF-20 | O sistema deve montar automaticamente grupos de 4–6 pessoas por rolê, maximizando a compatibilidade de interesses e vibe e respeitando as regras de segurança (RF-45 a RF-48). | P0 | V2, US-01, US-09 |
 | RF-21 | A montagem dos grupos deve ocorrer em um prazo fixo antes do rolê (ex.: 48h) e ser definitiva após a abertura do chat. | P0 | V2 |
 | RF-22 | O sistema deve notificar o usuário quando o grupo for formado. | P0 | V2 |
 
@@ -44,14 +44,14 @@
 | ID | Requisito | Prior. | Origem |
 |----|-----------|--------|--------|
 | RF-25 | O sistema deve oferecer chat em tempo real entre os membros do grupo, na janela definida em RF-51. | P0 | V2 |
-| RF-26 | Ao abrir o chat, a IA deve sugerir um quebra-gelo com base nos interesses em comum do grupo. | P1 | V2 |
+| RF-26 | Ao abrir o chat, a IA deve sugerir um quebra-gelo com base nos interesses em comum do grupo. | P1 | V2, US-10 |
 
 ### Pós-rolê
 
 | ID | Requisito | Prior. | Origem |
 |----|-----------|--------|--------|
 | RF-30 | Após o rolê, o sistema deve solicitar avaliação do rolê (nota) e de cada participante. | P0 | V2 |
-| RF-31 | Na avaliação, o usuário deve poder marcar "quero manter contato" com cada participante (liberação conforme RF-50). | P0 | V2 |
+| RF-31 | Na avaliação, o usuário deve poder marcar "quero manter contato" com cada participante (liberação conforme RF-50). | P0 | V2, US-04 |
 | RF-32 | O sistema deve registrar a presença do usuário no rolê a partir da confirmação dele e dos demais membros. | P0 | V2 |
 | RF-33 | O sistema deve cobrar taxa de no-show quando a ausência for reportada por pelo menos 2 membros do grupo, com aviso prévio no momento da inscrição. | P0 | V2 |
 | RF-34 | O sistema deve registrar interações (visualização, inscrição, cancelamento, presença, avaliações, contatos mantidos) para uso futuro pela IA. | P0 | V2 |
@@ -68,7 +68,7 @@
 
 | ID | Requisito | Prior. | Origem |
 |----|-----------|--------|--------|
-| RF-38 | O sistema deve enviar notificações (push do PWA e e-mail): grupo formado, chat aberto, lembrete do rolê, pedido de avaliação. | P0 | V2 |
+| RF-38 | O sistema deve enviar notificações (push do PWA e e-mail): grupo formado, chat aberto, lembrete do rolê, pedido de avaliação. | P0 | V2, US-08 |
 | RF-39 | O admin deve ter painel com inscrições, grupos formados e status de cada rolê. | P0 | V2 |
 
 ### Segurança
@@ -82,12 +82,12 @@
 | RF-44 | O sistema deve exigir aceite ativo do código de conduta no cadastro. | P0 | SEG-05 |
 | RF-45 | A montagem de grupos deve formar grupos de no mínimo 4 pessoas. | P0 | SEG-10 |
 | RF-46 | A montagem de grupos não deve colocar uma única mulher em um grupo de homens. | P0 | SEG-11 |
-| RF-47 | O usuário deve poder optar por participar apenas de grupos só de mulheres. | P0 | SEG-12 |
+| RF-47 | O usuário deve poder optar por participar apenas de grupos só de mulheres. | P0 | SEG-12, US-05 |
 | RF-48 | A montagem de grupos nunca deve juntar usuários que se bloquearam. | P0 | SEG-13 |
-| RF-49 | Dentro do grupo, o sistema deve exibir apenas primeiro nome, foto e interesses de cada membro. | P0 | SEG-20 |
-| RF-50 | O sistema só deve liberar dados de contato entre dois usuários quando ambos marcarem "quero manter contato". | P0 | SEG-21 |
-| RF-51 | O chat do grupo deve abrir ~24h antes do rolê e fechar após o término. | P0 | SEG-22 |
-| RF-52 | O endereço exato do rolê deve ser visível apenas aos membros do grupo; o sistema não deve expor localização em tempo real. | P0 | SEG-23 |
+| RF-49 | Dentro do grupo, o sistema deve exibir apenas primeiro nome, foto e interesses de cada membro. | P0 | SEG-20, US-06 |
+| RF-50 | O sistema só deve liberar dados de contato entre dois usuários quando ambos marcarem "quero manter contato". | P0 | SEG-21, US-04 |
+| RF-51 | O chat do grupo deve abrir ~24h antes do rolê e fechar após o término. | P0 | SEG-22, US-06 |
+| RF-52 | O endereço exato do rolê deve ser visível apenas aos membros do grupo; o sistema não deve expor localização em tempo real. | P0 | SEG-23, US-06 |
 | RF-53 | Rolês só podem ser cadastrados em locais públicos registrados pelo admin. | P0 | SEG-30 |
 | RF-54 | O usuário deve poder sair de um rolê a qualquer momento, sem justificativa e sem penalidade. | P0 | SEG-31 |
 | RF-55 | O app deve oferecer botão de ajuda com atalho para 190, Ligue 180 e denúncia rápida. | P0 | SEG-32 |

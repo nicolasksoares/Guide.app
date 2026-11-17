@@ -43,9 +43,9 @@ A pesquisa de mercado (nov/2026) mostrou:
 
 ```mermaid
 flowchart LR
-    A[Perfil<br/>interesses + vibe] --> B[Escolhe um rolê<br/>ou 'me surpreenda']
+    A[Perfil<br/>interesses + vibe] --> B[Escolhe um rolê<br/>da semana]
     B --> C[Algoritmo monta<br/>grupo de 4–6]
-    C --> D[Chat abre ~24h antes<br/>quebra-gelo por IA]
+    C --> D[Chat abre<br/>~24h antes]
     D --> E[O rolê<br/>local público]
     E --> F[Avaliação do rolê<br/>e das pessoas]
     F --> G[Calendário + mapa<br/>da cidade]
@@ -55,9 +55,9 @@ flowchart LR
 ```
 
 1. **Perfil** — interesses (categorias) + vibe. Serve para escolher eventos **e** pessoas.
-2. **Escolha** — o usuário entra em um rolê da semana ou pede "me surpreenda".
+2. **Escolha** — o usuário entra em um rolê da semana. *(Logo após o lançamento: "me surpreenda", RF-17.)*
 3. **Grupo** — o algoritmo forma grupos de 4–6 pessoas compatíveis.
-4. **Aquecimento** — chat do grupo abre ~24h antes; a IA sugere um quebra-gelo com base no que o grupo tem em comum.
+4. **Aquecimento** — chat do grupo abre ~24h antes. *(Logo após o lançamento: a IA sugere um quebra-gelo com base no que o grupo tem em comum, RF-26.)*
 5. **O rolê** — encontro em local público, normalmente o próprio evento.
 6. **Depois** — avaliação rápida, opção de manter contato, "fui" registrado automaticamente.
 7. **Identidade** — o rolê entra no calendário e no mapa da cidade; todo mês sai um card pronto para o Instagram, que traz novos usuários.
@@ -81,7 +81,7 @@ Se o usuário puder escolher qualquer evento, a cidade se espalha e nenhum grupo
 |------|-----------|---------|
 | **MVP** | **Montagem de grupos**: maximizar compatibilidade de vibe e interesses dentro de cada grupo, respeitando preferências (ex.: grupo só de mulheres). | É o coração do produto e o que os concorrentes de ingresso não têm. |
 | **MVP** | Pontuação de rolês por perfil (interesses + vibe + data). | Ordena os rolês da semana para cada pessoa. |
-| **MVP** | LLM para o quebra-gelo do grupo e, opcionalmente, onboarding conversacional ("me conta o que você curte"). | Diferencial visível e barato. |
+| **Pós-lançamento (P1)** | LLM para o quebra-gelo do grupo (RF-26) e, opcionalmente, onboarding conversacional ("me conta o que você curte"). | Diferencial visível e barato. Duas personas pedem o quebra-gelo; a prioridade está em aberto com o cliente. |
 | **MVP** | **Registrar tudo**: avaliações pós-rolê, quem manteve contato, no-shows, cliques. | É o dado exclusivo que treina a fase 2. |
 | **Fase 2** | Aprender com as avaliações quais combinações de pessoas funcionam; embeddings com pgvector. | Depende de volume de rolês realizados. |
 
@@ -133,7 +133,9 @@ Se o usuário puder escolher qualquer evento, a cidade se espalha e nenhum grupo
 
 | Risco | Mitigação |
 |-------|-----------|
-| **Segurança** (um incidente grave pode matar o app) | Verificação de identidade, 18+, só locais públicos, grupos só de mulheres, denúncia e banimento, termos claros |
+| **Segurança** (um incidente grave pode matar o app) | Verificação de identidade, 18+, só locais públicos, grupos só de mulheres, denúncia e banimento, termos claros. Detalhes em [Segurança do usuário](seguranca.md). |
+| **A verificação afastar quem tem medo** (ver persona [Bruno](02-personas.md)) | Explicar em linguagem simples o que é coletado, por quem e por quanto tempo; guardar só o resultado da verificação, não o documento **(validar com fornecedor e advogado)** |
+| **Verificação não impede má intenção** | Verificar prova *quem* a pessoa é, não *o que ela pretende*. Regras de grupo, reputação e resposta rápida a denúncias reduzem o risco, mas não o eliminam |
 | **Grupos não fecham** | Cidade única, poucos rolês em dias fixos, meta mínima de inscritos antes de confirmar |
 | **No-show** | Pagamento antecipado + taxa de no-show + reputação |
 | **Timeleft expandir para além do jantar** | Foco local e em rolê (festa, show, cultura), parcerias com casas da cidade |
