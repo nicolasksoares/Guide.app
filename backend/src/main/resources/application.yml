@@ -1,10 +1,9 @@
 spring:
   application:
     name: guide-api
-  config:
-    # Segredos vêm de variáveis de ambiente ou do .env da raiz (ignorado pelo git).
-    # Rodando a API de dentro de backend/, o .env fica um nível acima.
-    import: optional:file:../.env[.properties]
+  # Segredos vêm de variáveis de ambiente ou do .env da raiz (ignorado pelo git).
+  # Fora do Docker, o .env é lido por app.guide.compartilhado.config.DotenvEnvironmentPostProcessor,
+  # com as mesmas regras do Docker Compose (aspas, comentários).
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:${DB_PORTA_HOST:5433}/${DB_NAME:guide}}
     username: ${DB_USER:guide}
