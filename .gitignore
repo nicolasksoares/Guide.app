@@ -1,12 +1,29 @@
 # Protótipo original em PDF (18 MB) — fica fora do git, compartilhar via Drive
 docs/legado/*.pdf
 
-# Node / React
-node_modules/
-dist/
+# ---------------------------------------------------------------
+# SEGREDOS: nunca versionar. Valores reais ficam só no .env local
+# (modelo em .env.example, sem valores reais).
+# ---------------------------------------------------------------
 .env
 .env.*
 !.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+secrets/
+**/application-local.yml
+**/application-local.properties
+
+# Configuração local de ferramentas
+.claude/
+
+# Node / React
+node_modules/
+dist/
 
 # Java / Spring Boot
 target/

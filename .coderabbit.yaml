@@ -1,0 +1,50 @@
+# Configuração do CodeRabbit (revisão automática de PRs).
+# Referência: https://docs.coderabbit.ai/reference/configuration
+language: "pt-BR"
+
+reviews:
+  profile: "chill" # menos comentários de estilo, mais foco em bugs e riscos
+  high_level_summary: true
+  poem: false
+  review_status: true
+  auto_review:
+    enabled: true
+    drafts: false
+
+  # Arquivos gerados ou binários não precisam de revisão linha a linha
+  path_filters:
+    - "!**/package-lock.json"
+    - "!docs/**/*.pdf"
+    - "!docs/**/*.pptx"
+    - "!docs/**/*.drawio"
+    - "!frontend/public/*.png"
+
+  path_instructions:
+    - path: "backend/**/*.java"
+      instructions: >
+        Monólito modular em Spring Boot: um pacote por módulo em app.guide.*
+        (conta, role, pagamento, grupo, chat, avaliacao, identidade, moderacao);
+        um módulo não deve acessar classes internas de outro, e app.guide.compartilhado
+        não importa módulos de domínio. Atenção a LGPD: dados pessoais, CPF guardado como
+        HMAC e contas anonimizadas em vez de apagadas (docs/decisoes.md, D-03).
+        Verificar as regras de segurança na montagem de grupos (RF-45 a RF-48).
+    - path: "backend/src/main/resources/db/migration/**"
+      instructions: >
+        Migrações Flyway nunca são editadas depois de aplicadas; mudanças entram em um
+        arquivo novo. Nenhuma chave estrangeira com ON DELETE CASCADE. O modelo de
+        referência é docs/diagramas/banco-mvp.drawio.
+    - path: "backend/src/test/**"
+      instructions: >
+        Testes que precisam de banco usam Testcontainers com a imagem postgis/postgis
+        e devem ser pulados (não falhar) quando não houver Docker.
+    - path: "frontend/**"
+      instructions: >
+        PWA mobile-first em React + TypeScript + Tailwind CSS 4. Verificar tipagem,
+        acessibilidade básica (WCAG 2.1 AA) e que chamadas à API usem o caminho /api.
+    - path: "docs/**/*.md"
+      instructions: >
+        Documentação de produto e engenharia em português. Requisitos seguem os IDs
+        RF-xx, RNF-xx, US-xx e SEG-xx; conferir se referências a IDs existem.
+
+chat:
+  auto_reply: true

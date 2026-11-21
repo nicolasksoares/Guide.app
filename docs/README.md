@@ -38,6 +38,48 @@ A numeração segue a ordem de produção. Os números que faltam são as próxi
 - IDs rastreáveis: `US-xx` (história) → `RF-xx` / `RNF-xx` (requisito) → `UC-xx` (caso de uso). Medidas de segurança: `SEG-xx`.
 - Status: ⚪ a fazer · 🟡 rascunho · 🟢 validado com o cliente.
 
+## Como rodar o projeto
+
+| Pasta | O que é |
+|-------|---------|
+| `backend/` | API em Java 21 + Spring Boot 4.2 (Maven Wrapper). Um pacote por módulo de domínio em `app.guide.*`. |
+| `frontend/` | PWA em React + TypeScript + Vite + Tailwind CSS 4. |
+| `docker-compose.yml` | Banco PostgreSQL 17 + PostGIS, API e front-end. |
+
+**Antes de tudo, crie o seu `.env`** a partir do modelo e defina a senha do banco:
+
+```bash
+cp .env.example .env
+```
+
+> 🔒 **Segredos ficam só no `.env`**, que o git ignora. O `.env.example` é versionado e traz apenas os nomes das variáveis, nunca valores reais. Chaves e certificados (`*.pem`, `*.key`, `secrets/`) também são ignorados. A senha do banco não tem valor padrão no código: sem o `.env`, o `docker compose` para e avisa.
+
+**Tudo junto (precisa de Docker):**
+
+```bash
+docker compose up --build
+```
+
+Front-end em http://localhost:5173 · API em http://localhost:8081/api/status · saúde em http://localhost:8081/actuator/health · banco em `localhost:5433` (usuário e senha conforme o seu `.env`).
+
+> O banco do Docker usa a porta **5433** e a API a **8081** no seu computador, para não disputar a 5432 e a 8080 com um PostgreSQL (e o PEM) instalados na máquina. As portas só aceitam conexões da própria máquina (`127.0.0.1`).
+
+**Separado, para desenvolver:** use **três terminais**, todos abertos na raiz do repositório, e deixe cada um rodando.
+
+```bash
+docker compose up db                        # terminal 1: só o banco
+```
+
+```bash
+cd backend && ./mvnw spring-boot:run        # terminal 2: API em localhost:8081 (lê o .env da raiz)
+```
+
+```bash
+cd frontend && npm install && npm run dev   # terminal 3: front-end; /api vai para a API
+```
+
+**Testes:** `cd backend && ./mvnw test`. O teste que sobe a aplicação inteira usa Testcontainers (PostGIS real) e é **pulado** quando não há Docker na máquina.
+
 ## Protótipo original
 
 O PDF de protótipos do cliente fica só localmente em `docs/legado/` (no `.gitignore`, 18 MB) e deve ser compartilhado por Drive. Serve apenas como referência do que foi imaginado antes da v2.
