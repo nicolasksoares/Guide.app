@@ -16,7 +16,7 @@
 | RF-03 | O onboarding deve exigir a escolha de no mínimo 3 categorias de interesse. | P0 | V2, US-02 |
 | RF-04 | O onboarding deve registrar a vibe do usuário: energia (tranquilo ↔ agitado), faixa de preço, introvertido ↔ extrovertido e dias/horários preferidos. | P0 | V2, US-02, US-09 |
 | RF-05 | O usuário deve poder editar interesses, vibe e foto a qualquer momento. | P0 | V2 |
-| RF-06 | O usuário deve poder exportar seus dados e excluir a conta. | P0 | V2 (LGPD) |
+| RF-06 | O usuário deve poder exportar seus dados e excluir a conta. A exclusão anonimiza os dados pessoais de forma irreversível e preserva os dados de uso para métricas (ver [D-03](decisoes.md)). | P0 | V2 (LGPD) |
 
 ### Rolês
 

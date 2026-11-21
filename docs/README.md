@@ -10,10 +10,10 @@ A documentação vem **antes do código**. Cada etapa usa a anterior como base.
 | [Personas](ux/personas.pptx), [User Stories](ux/user-stories.pptx), [Journey Maps](ux/journey-maps.pptx) e [User Flow](ux/user-flow.pptx) (slides) | 🟡 Rascunho | **Fonte da verdade** de UX: 6 personas, 12 histórias, 6 jornadas atuais (sem o app) e 2 fluxos do MVP, nos templates Google UX. |
 | [04 · Requisitos](04-requisitos.md) | 🟡 Rascunho v2 | **Fonte da verdade** dos requisitos: 54 funcionais e 17 não funcionais, com prioridade P0/P1. O [kanban](https://github.com/users/nicolasksoares/projects/9) acompanha só o andamento. |
 | [BPMN do MVP](diagramas/bpmn-mvp.pdf) ([editável](diagramas/bpmn-mvp.drawio)) | 🟡 Rascunho | BPMN 2.0 em 6 páginas: visão geral + cadastro e verificação, inscrição e pagamento, montagem de grupo, rolê e pós-rolê, denúncia e moderação. Cada tarefa cita o requisito que atende. |
-| [Classes UML](diagramas/classes-mvp.pdf) ([editável](diagramas/classes-mvp.drawio)) | 🟡 Rascunho | 20 classes e 16 enumerações, agrupadas nos pacotes dos módulos do back-end, com multiplicidades, composições e a interface `MontadorDeGrupos`. |
-| [Banco de dados](diagramas/banco-mvp.pdf) ([editável](diagramas/banco-mvp.drawio)) | 🟡 Rascunho | Modelo físico em PostgreSQL 17 + PostGIS: 20 tabelas com tipos, PK/FK/UQ, checks, índices e cardinalidade (pé de galinha). Base para as migrações Flyway. |
+| [Classes UML](diagramas/classes-mvp.pdf) ([editável](diagramas/classes-mvp.drawio)) | 🟡 Rascunho | 22 classes e 16 enumerações, agrupadas nos pacotes dos módulos do back-end, com multiplicidades, composições e a interface `MontadorDeGrupos`. |
+| [Banco de dados](diagramas/banco-mvp.pdf) ([editável](diagramas/banco-mvp.drawio)) | 🟡 Rascunho | Modelo físico em PostgreSQL 17 + PostGIS: 22 tabelas com tipos, PK/FK/UQ, checks, índices e cardinalidade (pé de galinha). Base para as migrações Flyway. |
 | [Segurança do usuário](seguranca.md) | 🟡 Rascunho | 5 camadas de proteção, protocolo de incidente, LGPD. Origem dos requisitos RF-40 a RF-64. |
-| [Perguntas para o cliente](perguntas-cliente.md) | ⏳ Temporário | Decisões em aberto para a próxima reunião. Depois dela, vira `decisoes.md`. |
+| [Decisões](decisoes.md) | 🟢 Vivo | Registro das decisões tomadas (D-01 a D-03) e do que ainda está em aberto. |
 
 ## Roteiro
 
