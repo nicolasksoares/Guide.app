@@ -35,6 +35,31 @@ A numeração segue a ordem de produção. Os números que faltam são as próxi
 - IDs rastreáveis: `US-xx` (história) → `RF-xx` / `RNF-xx` (requisito) → `UC-xx` (caso de uso). Medidas de segurança: `SEG-xx`.
 - Status: ⚪ a fazer · 🟡 rascunho · 🟢 validado com o cliente.
 
+## Como rodar o projeto
+
+| Pasta | O que é |
+|-------|---------|
+| `backend/` | API em Java 21 + Spring Boot 4.2 (Maven Wrapper). Um pacote por módulo de domínio em `app.guide.*`. |
+| `frontend/` | PWA em React + TypeScript + Vite + Tailwind CSS 4. |
+| `docker-compose.yml` | Banco PostgreSQL 17 + PostGIS, API e front-end. |
+
+**Tudo junto (precisa de Docker):**
+
+```bash
+docker compose up --build
+```
+
+Front-end em http://localhost:5173 · API em http://localhost:8080/api/status · saúde em http://localhost:8080/actuator/health.
+
+**Separado, para desenvolver:**
+
+```bash
+cd backend && ./mvnw spring-boot:run      # precisa do banco: docker compose up db
+cd frontend && npm install && npm run dev # /api é encaminhado para localhost:8080
+```
+
+**Testes:** `cd backend && ./mvnw test`. O teste que sobe a aplicação inteira usa Testcontainers (PostGIS real) e é **pulado** quando não há Docker na máquina.
+
 ## Protótipo original
 
 O PDF de protótipos do cliente fica só localmente em `docs/legado/` (no `.gitignore`, 18 MB) e deve ser compartilhado por Drive. Serve apenas como referência do que foi imaginado antes da v2.

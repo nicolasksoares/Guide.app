@@ -1,0 +1,49 @@
+# Ambiente de desenvolvimento do Guide.app: banco + API + front-end.
+# Uso: docker compose up --build
+# Front-end: http://localhost:5173 · API: http://localhost:8080 · Banco: localhost:5432
+
+services:
+  db:
+    image: postgis/postgis:17-3.5
+    environment:
+      POSTGRES_DB: ${DB_NAME:-guide}
+      POSTGRES_USER: ${DB_USER:-guide}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-guide}
+    ports:
+      - "5432:5432"
+    volumes:
+      - dados-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: ./backend
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/${DB_NAME:-guide}
+      DB_USER: ${DB_USER:-guide}
+      DB_PASSWORD: ${DB_PASSWORD:-guide}
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    image: node:22-alpine
+    working_dir: /app
+    command: sh -c "npm ci && npm run dev"
+    environment:
+      VITE_API_PROXY: http://api:8080
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules # node_modules do container, separado do Windows
+    depends_on:
+      - api
+
+volumes:
+  dados-db:
