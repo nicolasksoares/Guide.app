@@ -147,7 +147,7 @@ Se o usuário puder escolher qualquer evento, a cidade se espalha e nenhum grupo
 | Camada | Tecnologia | Nota |
 |--------|------------|------|
 | Front-end | React + Vite + Tailwind, como **PWA** | Público mobile; evita App Store no MVP. |
-| Back-end | Java + Spring Boot, **monólito modular** | Módulos: usuário, rolê, grupo, chat, pagamento, avaliação, moderação. |
+| Back-end | Java + Spring Boot, **monólito modular** | Módulos: conta, rolê, pagamento, grupo, chat, avaliação, identidade, moderação. |
 | Banco | PostgreSQL + **PostGIS** (Docker) | Mapa da cidade e locais. pgvector na fase 2. |
 | Tempo real | WebSocket (Spring) | Chat do grupo. |
 | Infra local | Docker Compose | Tudo sobe com um comando. |
