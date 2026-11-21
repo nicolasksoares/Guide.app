@@ -46,19 +46,36 @@ A numeração segue a ordem de produção. Os números que faltam são as próxi
 | `frontend/` | PWA em React + TypeScript + Vite + Tailwind CSS 4. |
 | `docker-compose.yml` | Banco PostgreSQL 17 + PostGIS, API e front-end. |
 
+**Antes de tudo, crie o seu `.env`** a partir do modelo e defina a senha do banco:
+
+```bash
+cp .env.example .env
+```
+
+> 🔒 **Segredos ficam só no `.env`**, que o git ignora. O `.env.example` é versionado e traz apenas os nomes das variáveis, nunca valores reais. Chaves e certificados (`*.pem`, `*.key`, `secrets/`) também são ignorados. A senha do banco não tem valor padrão no código: sem o `.env`, o `docker compose` para e avisa.
+
 **Tudo junto (precisa de Docker):**
 
 ```bash
 docker compose up --build
 ```
 
-Front-end em http://localhost:5173 · API em http://localhost:8080/api/status · saúde em http://localhost:8080/actuator/health.
+Front-end em http://localhost:5173 · API em http://localhost:8081/api/status · saúde em http://localhost:8081/actuator/health · banco em `localhost:5433` (usuário e senha conforme o seu `.env`).
 
-**Separado, para desenvolver:**
+> O banco do Docker usa a porta **5433** e a API a **8081** no seu computador, para não disputar a 5432 e a 8080 com um PostgreSQL (e o PEM) instalados na máquina. As portas só aceitam conexões da própria máquina (`127.0.0.1`).
+
+**Separado, para desenvolver:** use **três terminais**, todos abertos na raiz do repositório, e deixe cada um rodando.
 
 ```bash
-cd backend && ./mvnw spring-boot:run      # precisa do banco: docker compose up db
-cd frontend && npm install && npm run dev # /api é encaminhado para localhost:8080
+docker compose up db                        # terminal 1: só o banco
+```
+
+```bash
+cd backend && ./mvnw spring-boot:run        # terminal 2: API em localhost:8081 (lê o .env da raiz)
+```
+
+```bash
+cd frontend && npm install && npm run dev   # terminal 3: front-end; /api vai para a API
 ```
 
 **Testes:** `cd backend && ./mvnw test`. O teste que sobe a aplicação inteira usa Testcontainers (PostGIS real) e é **pulado** quando não há Docker na máquina.

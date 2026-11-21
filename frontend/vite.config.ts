@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // URL da API usada pelo servidor de desenvolvimento (proxy de /api).
 // No docker-compose ela aponta para o serviço "api".
-const apiUrl = process.env.VITE_API_PROXY ?? 'http://localhost:8080'
+const apiUrl = process.env.VITE_API_PROXY ?? 'http://localhost:8081'
 
 export default defineConfig({
   plugins: [

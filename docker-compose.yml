@@ -1,6 +1,9 @@
 # Ambiente de desenvolvimento do Guide.app: banco + API + front-end.
-# Uso: docker compose up --build
-# Front-end: http://localhost:5173 · API: http://localhost:8080 · Banco: localhost:5432
+# Uso: copie .env.example para .env, defina DB_PASSWORD e rode: docker compose up --build
+# Front-end: http://localhost:5173 · API: http://localhost:8081 · Banco: localhost:5433
+# As portas ficam presas a 127.0.0.1: só esta máquina acessa.
+# A senha do banco não tem valor padrão: vem só do .env (ignorado pelo git).
+# Banco na 5433 e API na 8081 para não disputar a 5432 e a 8080 com um PostgreSQL (e o PEM) instalados na máquina.
 
 services:
   db:
@@ -8,9 +11,9 @@ services:
     environment:
       POSTGRES_DB: ${DB_NAME:-guide}
       POSTGRES_USER: ${DB_USER:-guide}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-guide}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Defina DB_PASSWORD no arquivo .env (copie de .env.example)}
     ports:
-      - "5432:5432"
+      - "127.0.0.1:${DB_PORTA_HOST:-5433}:5432"
     volumes:
       - dados-db:/var/lib/postgresql/data
     healthcheck:
@@ -24,9 +27,9 @@ services:
     environment:
       DB_URL: jdbc:postgresql://db:5432/${DB_NAME:-guide}
       DB_USER: ${DB_USER:-guide}
-      DB_PASSWORD: ${DB_PASSWORD:-guide}
+      DB_PASSWORD: ${DB_PASSWORD:?Defina DB_PASSWORD no arquivo .env (copie de .env.example)}
     ports:
-      - "8080:8080"
+      - "127.0.0.1:8081:8081"
     depends_on:
       db:
         condition: service_healthy
@@ -36,9 +39,9 @@ services:
     working_dir: /app
     command: sh -c "npm ci && npm run dev"
     environment:
-      VITE_API_PROXY: http://api:8080
+      VITE_API_PROXY: http://api:8081
     ports:
-      - "5173:5173"
+      - "127.0.0.1:5173:5173"
     volumes:
       - ./frontend:/app
       - /app/node_modules # node_modules do container, separado do Windows

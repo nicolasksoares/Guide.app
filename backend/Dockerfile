@@ -14,5 +14,5 @@ WORKDIR /app
 RUN useradd --system --uid 1001 guide
 COPY --from=build /app/target/guide-api-*.jar app.jar
 USER guide
-EXPOSE 8080
+EXPOSE 8081
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
